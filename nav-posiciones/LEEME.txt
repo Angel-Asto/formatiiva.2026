@@ -1,0 +1,10 @@
+5 EJEMPLOS DE NAV EN DISTINTAS POSICIONES (proyecto EIRP)
+
+1) Logo izquierda, links DERECHA        -> justify-content: space-between (2 hijos)
+2) Links IZQUIERDA, logo derecha        -> flex-direction: row-reverse
+3) Logo al CENTRO, links a ambos lados  -> justify-content: center + gap
+4) Todo a la IZQUIERDA, botón derecha   -> margin-left: auto en el botón
+5) Menú LATERAL vertical                -> body flex + nav flex-direction: column
+
+Cada carpeta: index.html, css/styles.css, img/ e IMPRIMIR.html
+(IMPRIMIR.html = arriba cómo se ve, abajo el HTML y el CSS, listo para Ctrl+P)

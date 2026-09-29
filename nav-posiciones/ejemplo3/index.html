@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />  <!-- para que se vean bien las tildes y la ñ -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />  <!-- para que se ajuste al celular -->
+  <title>Ejemplo 3 - Logo centro</title>  <!-- el nombre que sale en la pestaña del navegador -->
+  <link rel="stylesheet" href="css/styles.css" />  <!-- conecta este HTML con el archivo CSS -->
+</head>
+
+<body>
+  <header class="header">
+    <nav class="nav">  <!-- 3 hijos: lista izquierda, logo al medio, lista derecha -->
+      <ul class="nav__links">  <!-- lista de la IZQUIERDA -->
+        <li><a href="#">Inicio</a></li>
+        <li><a href="#">Nosotros</a></li>
+      </ul>
+
+      <a href="#" class="nav__logo">  <!-- el logo es un link al inicio -->
+        <img src="img/logo.png" alt="Logo EIRP+" />
+      </a>
+
+      <ul class="nav__links">  <!-- lista de la DERECHA -->
+        <li><a href="#">Servicios</a></li>
+        <li><a href="#">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+    <main class="hero">  <!-- bloque grande con el título -->
+      <h1>Higiene Industrial Plus EIRP</h1>
+      <h2>Soluciones limpias para obras seguras</h2>
+      <p>Limpieza, seguridad y energía para minería e industria, con respuesta operativa 24/7.</p>
+
+      <div class="hero__btns">  <!-- caja que agrupa los 2 botones para centrarlos -->
+        <a href="#" class="btn btn--primary">Solicitar cotización</a>
+        <a href="#" class="btn btn--outline">Ver servicios</a>
+      </div>
+    </main>
+</body>
+</html>

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<title>Ejemplo 5: Menú lateral vertical (sidebar)</title>
+<style>
+  body { font-family: Arial, sans-serif; margin: 20px auto; max-width: 950px; padding: 0 15px; }
+  h1 { font-size: 1.3rem; }
+  h2 { font-size: 1.05rem; background: #0b3d5c; color: #fff; padding: 6px 10px; margin-top: 25px; }
+  iframe { width: 100%; height: 480px; border: 2px solid #333; }
+  pre { background: #f6f6f6; border: 1px solid #ccc; padding: 10px; font-size: 11px; line-height: 1.35;
+        white-space: pre-wrap; word-wrap: break-word; }
+  .css h2 { page-break-before: always; }
+  @media print { body { max-width: none; } pre { font-size: 9px; } }
+</style>
+</head>
+<body>
+<h1>Ejemplo 5: Menú lateral vertical (sidebar)</h1>
+
+<h2>1) Así se ve</h2>
+<iframe src="index.html"></iframe>
+
+<h2>2) Código HTML (index.html)</h2>
+<pre>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;es&quot;&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;UTF-8&quot; /&gt;  &lt;!-- para que se vean bien las tildes y la ñ --&gt;
+  &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot; /&gt;  &lt;!-- para que se ajuste al celular --&gt;
+  &lt;title&gt;Ejemplo 5 - Menú lateral&lt;/title&gt;  &lt;!-- el nombre que sale en la pestaña del navegador --&gt;
+  &lt;link rel=&quot;stylesheet&quot; href=&quot;css/styles.css&quot; /&gt;  &lt;!-- conecta este HTML con el archivo CSS --&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+  &lt;header class=&quot;sidebar&quot;&gt;  &lt;!-- la barra lateral (va a la izquierda) --&gt;
+    &lt;nav class=&quot;nav&quot;&gt;
+      &lt;a href=&quot;#&quot; class=&quot;nav__logo&quot;&gt;  &lt;!-- el logo es un link al inicio --&gt;
+        &lt;img src=&quot;img/logo.png&quot; alt=&quot;Logo EIRP+&quot; /&gt;
+      &lt;/a&gt;
+
+      &lt;ul class=&quot;nav__links&quot;&gt;
+        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Inicio&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Nosotros&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Servicios&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Cobertura&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Contacto&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+
+      &lt;a href=&quot;#&quot; class=&quot;btn btn--primary&quot;&gt;Solicitar cotización&lt;/a&gt;
+    &lt;/nav&gt;
+  &lt;/header&gt;
+
+  &lt;main class=&quot;content&quot;&gt;  &lt;!-- todo el contenido va a la derecha de la barra --&gt;
+    &lt;div class=&quot;hero&quot;&gt;
+      &lt;h1&gt;Higiene Industrial Plus EIRP&lt;/h1&gt;
+      &lt;h2&gt;Soluciones limpias para obras seguras&lt;/h2&gt;
+      &lt;p&gt;Limpieza, seguridad y energía para minería e industria, con respuesta operativa 24/7.&lt;/p&gt;
+
+      &lt;div class=&quot;hero__btns&quot;&gt;
+        &lt;a href=&quot;#&quot; class=&quot;btn btn--primary&quot;&gt;Solicitar cotización&lt;/a&gt;
+        &lt;a href=&quot;#&quot; class=&quot;btn btn--outline&quot;&gt;Ver servicios&lt;/a&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/main&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+
+<div class="css">
+<h2>3) Código CSS (css/styles.css)</h2>
+<pre>/* ============================================================
+   EJEMPLO 5 - MENU LATERAL VERTICAL (SIDEBAR)
+   Posición del menú: COSTADO IZQUIERDO
+   ============================================================ */
+
+/* ---------- RESET: se pone SIEMPRE al principio ---------- */
+* {                        /* el asterisco significa &quot;TODOS los elementos&quot; */
+  margin: 0;               /* quita el espacio de AFUERA de la caja (distancia entre dos cajas de fruta) */
+  padding: 0;              /* quita el relleno de ADENTRO (el cartón entre la caja y las manzanas) */
+  box-sizing: border-box;  /* el ancho que pongo ya incluye el relleno: la caja no se &quot;infla&quot; */
+}
+
+body {                                        /* body = toda la página */
+  font-family: Arial, Helvetica, sans-serif;  /* tipo de letra; si no existe Arial usa la siguiente */
+}
+
+a {                        /* todos los links */
+  text-decoration: none;   /* les quita el subrayado */
+}
+
+ul {                       /* todas las listas */
+  list-style: none;        /* les quita las viñetas (los puntitos) */
+}
+
+/* ---------- BOTONES ---------- */
+.btn {                     /* el punto = &quot;todo lo que tenga class=&#x27;btn&#x27;&quot; */
+  display: inline-block;   /* se comporta como texto pero deja darle alto y relleno */
+  padding: 12px 24px;      /* relleno: 12px arriba/abajo, 24px a izquierda/derecha */
+  border-radius: 6px;      /* redondea las esquinas */
+  font-weight: bold;       /* letra en negrita */
+}
+
+.btn--primary {            /* botón relleno */
+  background-color: #f5a623;  /* fondo amarillo */
+  color: #000;             /* letra negra */
+}
+
+.btn--outline {            /* botón solo con borde */
+  border: 2px solid #fff;  /* borde de 2px, línea continua, blanco */
+  color: #fff;             /* letra blanca */
+}
+
+.btn:hover {               /* :hover = cuando el mouse está encima */
+  opacity: 0.85;           /* se ve un poquito transparente para avisar que es clickeable */
+}
+
+/* ---------- LA PAGINA EN 2 COLUMNAS ---------- */
+body {
+  display: flex;             /* las 2 cajas hijas del body (sidebar y contenido) quedan una AL LADO de la otra */
+}
+/* Para pasar el menú al lado DERECHO: agrega  flex-direction: row-reverse;  aquí arriba. */
+
+/* ---------- LA BARRA LATERAL ---------- */
+.sidebar {
+  width: 240px;              /* ancho fijo de la barra lateral */
+  min-height: 100vh;         /* alto mínimo = toda la pantalla (100vh = 100% del alto visible) */
+  background-color: #0b3d5c; /* fondo azul oscuro */
+  padding: 30px 20px;        /* relleno: 30px arriba/abajo y 20px a los lados */
+}
+
+.nav {
+  display: flex;             /* activa flexbox dentro de la barra */
+  flex-direction: column;    /* apila logo, links y botón UNO BAJO OTRO */
+  align-items: center;       /* centra cada cosa en horizontal (recuerda: en column los ejes se invierten) */
+  gap: 30px;                 /* 30px entre logo, links y botón */
+}
+
+.nav__logo img {           /* el logo */
+  width: 150px;            /* aquí definimos el ANCHO porque la barra es angosta */
+}
+
+.nav__links {              /* la lista de links */
+  display: flex;           /* activa flexbox */
+  flex-direction: column;  /* links uno BAJO otro (vertical) en vez de en fila */
+  gap: 20px;               /* 20px entre link y link */
+  text-align: center;      /* texto centrado */
+}
+
+.nav__links a {            /* cada link */
+  color: #fff;             /* letra blanca */
+  font-weight: bold;       /* negrita */
+}
+
+.nav__links a:hover {      /* cuando el mouse pasa por encima */
+  color: #f5a623;          /* cambia a amarillo */
+}
+
+/* ---------- EL CONTENIDO (a la derecha) ---------- */
+.content {
+  flex: 1;                   /* ocupa TODO el espacio que sobra al lado de la barra lateral */
+}
+
+.hero {
+  background-color: #1d7a9e; /* fondo celeste */
+  color: #fff;               /* texto blanco */
+  text-align: center;        /* texto centrado */
+  padding: 120px 20px;       /* relleno: 120px arriba/abajo y 20px a los lados */
+  min-height: 100vh;         /* el bloque cubre toda la altura de la pantalla */
+}
+
+.hero h1 {                 /* título */
+  font-size: 2.5rem;       /* tamaño grande */
+  margin: 10px 0;          /* 10px arriba y abajo */
+}
+
+.hero h2 {                 /* subtítulo */
+  margin-bottom: 15px;     /* separa del párrafo */
+}
+
+.hero__btns {              /* cajita de los 2 botones */
+  display: flex;           /* botones en fila */
+  justify-content: center; /* centrados en horizontal */
+  gap: 15px;               /* 15px entre botones */
+  margin-top: 25px;        /* separa del texto */
+}
+</pre>
+</div>
+</body>
+</html>

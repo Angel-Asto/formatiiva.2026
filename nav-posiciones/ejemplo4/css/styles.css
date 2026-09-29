@@ -1,0 +1,102 @@
+/* ============================================================
+   EJEMPLO 4 - LOGO Y LINKS JUNTOS A LA IZQUIERDA, BOTON A LA DERECHA
+   Posición del menú: IZQUIERDA (pegado al logo)
+   ============================================================ */
+
+/* ---------- RESET: se pone SIEMPRE al principio ---------- */
+* {                        /* el asterisco significa "TODOS los elementos" */
+  margin: 0;               /* quita el espacio de AFUERA de la caja (distancia entre dos cajas de fruta) */
+  padding: 0;              /* quita el relleno de ADENTRO (el cartón entre la caja y las manzanas) */
+  box-sizing: border-box;  /* el ancho que pongo ya incluye el relleno: la caja no se "infla" */
+}
+
+body {                                        /* body = toda la página */
+  font-family: Arial, Helvetica, sans-serif;  /* tipo de letra; si no existe Arial usa la siguiente */
+}
+
+a {                        /* todos los links */
+  text-decoration: none;   /* les quita el subrayado */
+}
+
+ul {                       /* todas las listas */
+  list-style: none;        /* les quita las viñetas (los puntitos) */
+}
+
+/* ---------- BOTONES ---------- */
+.btn {                     /* el punto = "todo lo que tenga class='btn'" */
+  display: inline-block;   /* se comporta como texto pero deja darle alto y relleno */
+  padding: 12px 24px;      /* relleno: 12px arriba/abajo, 24px a izquierda/derecha */
+  border-radius: 6px;      /* redondea las esquinas */
+  font-weight: bold;       /* letra en negrita */
+}
+
+.btn--primary {            /* botón relleno */
+  background-color: #f5a623;  /* fondo amarillo */
+  color: #000;             /* letra negra */
+}
+
+.btn--outline {            /* botón solo con borde */
+  border: 2px solid #fff;  /* borde de 2px, línea continua, blanco */
+  color: #fff;             /* letra blanca */
+}
+
+.btn:hover {               /* :hover = cuando el mouse está encima */
+  opacity: 0.85;           /* se ve un poquito transparente para avisar que es clickeable */
+}
+
+/* ---------- LA BARRA (NAV) ---------- */
+.nav {
+  display: flex;             /* logo, lista y botón en fila */
+  align-items: center;       /* centrados en vertical */
+  gap: 40px;                 /* 40px entre logo y lista, y entre lista y botón */
+  padding: 15px 40px;        /* alto de la barra y espacio a los lados */
+  background-color: #0b3d5c; /* fondo azul oscuro */
+}
+/* OJO: aquí NO hay justify-content. Sin él, todo se apila a la IZQUIERDA (es el valor por defecto). */
+
+.nav__logo img {           /* el logo */
+  height: 50px;            /* alto del logo */
+}
+
+.nav .btn {                /* el botón que está dentro del nav */
+  margin-left: auto;       /* TRUCO: "empuja" al botón todo lo que pueda hacia la derecha usando el espacio sobrante */
+}
+/* margin-left:auto = "toma todo el espacio libre de mi izquierda". Sirve para mandar UN solo elemento al extremo derecho. */
+
+.nav__links {               /* la lista <ul> con los links */
+  display: flex;           /* los <li> pasan de estar uno bajo otro a estar EN FILA */
+  gap: 30px;               /* espacio de 30px ENTRE cada link */
+}
+
+.nav__links a {            /* cada link de la lista */
+  color: #fff;             /* letra blanca */
+  font-weight: bold;       /* negrita */
+}
+
+.nav__links a:hover {      /* cuando el mouse pasa por encima */
+  color: #f5a623;          /* la letra cambia a amarillo */
+}
+
+/* ---------- EL HERO (bloque del título) ---------- */
+.hero {
+  background-color: #1d7a9e;  /* fondo celeste */
+  color: #fff;             /* todo el texto de adentro en blanco */
+  text-align: center;      /* centra el TEXTO en horizontal */
+  padding: 100px 20px;     /* relleno: 100px arriba/abajo y 20px a los lados */
+}
+
+.hero h1 {                 /* el título principal */
+  font-size: 3rem;         /* tamaño de letra grande */
+  margin: 10px 0;          /* espacio de afuera: 10px arriba y abajo */
+}
+
+.hero h2 {                 /* el subtítulo */
+  margin-bottom: 15px;     /* separa el subtítulo del párrafo */
+}
+
+.hero__btns {              /* la cajita que agrupa los 2 botones */
+  display: flex;           /* botones EN FILA */
+  justify-content: center; /* CENTRA los botones en horizontal */
+  gap: 15px;               /* 15px entre un botón y el otro */
+  margin-top: 25px;        /* separa los botones del texto de arriba */
+}

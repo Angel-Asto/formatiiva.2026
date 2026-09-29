@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<title>Ejemplo 3: Logo al CENTRO con links a ambos lados</title>
+<style>
+  body { font-family: Arial, sans-serif; margin: 20px auto; max-width: 950px; padding: 0 15px; }
+  h1 { font-size: 1.3rem; }
+  h2 { font-size: 1.05rem; background: #0b3d5c; color: #fff; padding: 6px 10px; margin-top: 25px; }
+  iframe { width: 100%; height: 480px; border: 2px solid #333; }
+  pre { background: #f6f6f6; border: 1px solid #ccc; padding: 10px; font-size: 11px; line-height: 1.35;
+        white-space: pre-wrap; word-wrap: break-word; }
+  .css h2 { page-break-before: always; }
+  @media print { body { max-width: none; } pre { font-size: 9px; } }
+</style>
+</head>
+<body>
+<h1>Ejemplo 3: Logo al CENTRO con links a ambos lados</h1>
+
+<h2>1) Así se ve</h2>
+<iframe src="index.html"></iframe>
+
+<h2>2) Código HTML (index.html)</h2>
+<pre>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;es&quot;&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;UTF-8&quot; /&gt;  &lt;!-- para que se vean bien las tildes y la ñ --&gt;
+  &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot; /&gt;  &lt;!-- para que se ajuste al celular --&gt;
+  &lt;title&gt;Ejemplo 3 - Logo centro&lt;/title&gt;  &lt;!-- el nombre que sale en la pestaña del navegador --&gt;
+  &lt;link rel=&quot;stylesheet&quot; href=&quot;css/styles.css&quot; /&gt;  &lt;!-- conecta este HTML con el archivo CSS --&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+  &lt;header class=&quot;header&quot;&gt;
+    &lt;nav class=&quot;nav&quot;&gt;  &lt;!-- 3 hijos: lista izquierda, logo al medio, lista derecha --&gt;
+      &lt;ul class=&quot;nav__links&quot;&gt;  &lt;!-- lista de la IZQUIERDA --&gt;
+        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Inicio&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Nosotros&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+
+      &lt;a href=&quot;#&quot; class=&quot;nav__logo&quot;&gt;  &lt;!-- el logo es un link al inicio --&gt;
+        &lt;img src=&quot;img/logo.png&quot; alt=&quot;Logo EIRP+&quot; /&gt;
+      &lt;/a&gt;
+
+      &lt;ul class=&quot;nav__links&quot;&gt;  &lt;!-- lista de la DERECHA --&gt;
+        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Servicios&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Contacto&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/nav&gt;
+  &lt;/header&gt;
+
+    &lt;main class=&quot;hero&quot;&gt;  &lt;!-- bloque grande con el título --&gt;
+      &lt;h1&gt;Higiene Industrial Plus EIRP&lt;/h1&gt;
+      &lt;h2&gt;Soluciones limpias para obras seguras&lt;/h2&gt;
+      &lt;p&gt;Limpieza, seguridad y energía para minería e industria, con respuesta operativa 24/7.&lt;/p&gt;
+
+      &lt;div class=&quot;hero__btns&quot;&gt;  &lt;!-- caja que agrupa los 2 botones para centrarlos --&gt;
+        &lt;a href=&quot;#&quot; class=&quot;btn btn--primary&quot;&gt;Solicitar cotización&lt;/a&gt;
+        &lt;a href=&quot;#&quot; class=&quot;btn btn--outline&quot;&gt;Ver servicios&lt;/a&gt;
+      &lt;/div&gt;
+    &lt;/main&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+
+<div class="css">
+<h2>3) Código CSS (css/styles.css)</h2>
+<pre>/* ============================================================
+   EJEMPLO 3 - LOGO AL CENTRO, LINKS A AMBOS LADOS
+   Posición del menú: CENTRO (simétrico)
+   ============================================================ */
+
+/* ---------- RESET: se pone SIEMPRE al principio ---------- */
+* {                        /* el asterisco significa &quot;TODOS los elementos&quot; */
+  margin: 0;               /* quita el espacio de AFUERA de la caja (distancia entre dos cajas de fruta) */
+  padding: 0;              /* quita el relleno de ADENTRO (el cartón entre la caja y las manzanas) */
+  box-sizing: border-box;  /* el ancho que pongo ya incluye el relleno: la caja no se &quot;infla&quot; */
+}
+
+body {                                        /* body = toda la página */
+  font-family: Arial, Helvetica, sans-serif;  /* tipo de letra; si no existe Arial usa la siguiente */
+}
+
+a {                        /* todos los links */
+  text-decoration: none;   /* les quita el subrayado */
+}
+
+ul {                       /* todas las listas */
+  list-style: none;        /* les quita las viñetas (los puntitos) */
+}
+
+/* ---------- BOTONES ---------- */
+.btn {                     /* el punto = &quot;todo lo que tenga class=&#x27;btn&#x27;&quot; */
+  display: inline-block;   /* se comporta como texto pero deja darle alto y relleno */
+  padding: 12px 24px;      /* relleno: 12px arriba/abajo, 24px a izquierda/derecha */
+  border-radius: 6px;      /* redondea las esquinas */
+  font-weight: bold;       /* letra en negrita */
+}
+
+.btn--primary {            /* botón relleno */
+  background-color: #f5a623;  /* fondo amarillo */
+  color: #000;             /* letra negra */
+}
+
+.btn--outline {            /* botón solo con borde */
+  border: 2px solid #fff;  /* borde de 2px, línea continua, blanco */
+  color: #fff;             /* letra blanca */
+}
+
+.btn:hover {               /* :hover = cuando el mouse está encima */
+  opacity: 0.85;           /* se ve un poquito transparente para avisar que es clickeable */
+}
+
+/* ---------- LA BARRA (NAV) ---------- */
+.nav {
+  display: flex;             /* los 3 hijos (lista, logo, lista) en fila */
+  justify-content: center;   /* los junta a todos EN EL CENTRO de la barra */
+  align-items: center;       /* centrados en vertical */
+  gap: 50px;                 /* 50px de espacio entre lista, logo y lista (así el logo queda separado) */
+  padding: 15px 40px;        /* alto de la barra y espacio a los lados */
+  background-color: #0b3d5c; /* fondo azul oscuro */
+}
+/* CLAVE: aquí NO se usa space-between. Se usa center + gap para que todo quede agrupado al medio. */
+
+.nav__logo img {           /* el logo */
+  height: 60px;            /* un poco más grande porque es el protagonista */
+}
+
+.nav__links {               /* la lista &lt;ul&gt; con los links */
+  display: flex;           /* los &lt;li&gt; pasan de estar uno bajo otro a estar EN FILA */
+  gap: 30px;               /* espacio de 30px ENTRE cada link */
+}
+
+.nav__links a {            /* cada link de la lista */
+  color: #fff;             /* letra blanca */
+  font-weight: bold;       /* negrita */
+}
+
+.nav__links a:hover {      /* cuando el mouse pasa por encima */
+  color: #f5a623;          /* la letra cambia a amarillo */
+}
+
+/* ---------- EL HERO (bloque del título) ---------- */
+.hero {
+  background-color: #1d7a9e;  /* fondo celeste */
+  color: #fff;             /* todo el texto de adentro en blanco */
+  text-align: center;      /* centra el TEXTO en horizontal */
+  padding: 100px 20px;     /* relleno: 100px arriba/abajo y 20px a los lados */
+}
+
+.hero h1 {                 /* el título principal */
+  font-size: 3rem;         /* tamaño de letra grande */
+  margin: 10px 0;          /* espacio de afuera: 10px arriba y abajo */
+}
+
+.hero h2 {                 /* el subtítulo */
+  margin-bottom: 15px;     /* separa el subtítulo del párrafo */
+}
+
+.hero__btns {              /* la cajita que agrupa los 2 botones */
+  display: flex;           /* botones EN FILA */
+  justify-content: center; /* CENTRA los botones en horizontal */
+  gap: 15px;               /* 15px entre un botón y el otro */
+  margin-top: 25px;        /* separa los botones del texto de arriba */
+}
+</pre>
+</div>
+</body>
+</html>
